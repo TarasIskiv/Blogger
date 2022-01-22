@@ -43,6 +43,7 @@ namespace Application.Services
         public IEnumerable<PostDto> GetAll()
         {
             var _posts = _postRepository.GetAll();
+            if (_posts == null) return null;
             return _mapper.Map<IEnumerable<PostDto>>(_posts);
         }
         public PostDto GetById(int id)
