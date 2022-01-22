@@ -12,5 +12,7 @@ namespace Application.Interfaces
         public IEnumerable<PostDto> GetAll();
 
         public PostDto GetById(int id);
+
+        public PostDto Create(CreatePostDto dto);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Dto;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -35,6 +36,14 @@ namespace BloggerWebApi.Controllers
             if (post == null) return NotFound();
 
             return Ok(post);
+        }
+
+        [SwaggerOperation(Summary = "Add a new post")]
+        [HttpPost]
+        public IActionResult Create([FromBody]CreatePostDto dto)
+        {
+            var result = _postService.Create(dto);
+            return Created($"api/post/{result.Id}", result);
         }
     }
 
