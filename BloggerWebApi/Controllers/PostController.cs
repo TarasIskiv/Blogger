@@ -45,6 +45,14 @@ namespace BloggerWebApi.Controllers
             var result = _postService.Create(dto);
             return Created($"api/post/{result.Id}", result);
         }
+
+        [SwaggerOperation(Summary = "Update post by unique id")]
+        [HttpPut]
+        public ActionResult Update([FromBody] UpdatePostDto dto)
+        {
+            _postService.UpdatePost(dto);
+            return NoContent();
+        }
     }
 
 

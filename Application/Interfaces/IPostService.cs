@@ -14,5 +14,7 @@ namespace Application.Interfaces
         public PostDto GetById(int id);
 
         public PostDto Create(CreatePostDto dto);
+
+        public void UpdatePost(UpdatePostDto dto);
     }
 }
