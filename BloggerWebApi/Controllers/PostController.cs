@@ -53,6 +53,14 @@ namespace BloggerWebApi.Controllers
             _postService.UpdatePost(dto);
             return NoContent();
         }
+
+
+        [HttpDelete]
+        public ActionResult Delete([FromRoute] int id)
+        {
+            _postService.DeletePost(id);
+            return NoContent();
+        }
     }
 
 

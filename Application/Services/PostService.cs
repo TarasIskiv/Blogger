@@ -33,6 +33,13 @@ namespace Application.Services
             return _mapper.Map<PostDto>(post);
         }
 
+        public void DeletePost(int id)
+        {
+            var post = _postRepository.GetById(id);
+            //if (post == null) throw new Exception("Bad unique id");
+            _postRepository.Delete(post);
+        }
+
         public IEnumerable<PostDto> GetAll()
         {
             var _posts = _postRepository.GetAll();

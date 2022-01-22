@@ -16,5 +16,7 @@ namespace Application.Interfaces
         public PostDto Create(CreatePostDto dto);
 
         public void UpdatePost(UpdatePostDto dto);
+
+        public void DeletePost(int id);
     }
 }
